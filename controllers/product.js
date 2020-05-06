@@ -1,15 +1,15 @@
-const productList = [];
+const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
     res.render('add-product', {tab: 'addProduct'});
 }
 
 exports.postAddProduct = (req, res, next) => {
-    productList.push({title: req.body.title});
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect('/');
 }
 
 exports.displayProducts = (req, res, next) => {
-    console.log(productList);
-    res.render('shop.pug',  { productList: productList, tab: 'shop' });
+    res.render('shop.pug',  { productList: Product.fetchAll(), tab: 'shop' });
 }
