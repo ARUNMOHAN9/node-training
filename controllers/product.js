@@ -11,5 +11,10 @@ exports.postAddProduct = (req, res, next) => {
 }
 
 exports.displayProducts = (req, res, next) => {
-    res.render('shop.pug',  { productList: Product.fetchAll(), tab: 'shop' });
+    Product.fetchAll().then((result) => {
+        res.render('shop.pug',  { productList: result, tab: 'shop' });
+    }).catch(err => {
+        console.log(err);
+        res.render('shop.pug',  { productList: [], tab: 'shop' });
+    });
 }
