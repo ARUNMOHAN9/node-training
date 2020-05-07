@@ -1,1 +1,14 @@
-[{"title":"dilwale"},{"title":"nerupda"},{"title":"pencil"}]
+[
+  {
+    "title": "A Book",
+    "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
+    "description": "This is an awesome book!",
+    "price": "19"
+  },
+  {
+    "title": "pencil",
+    "imageUrl": "https://miro.medium.com/max/1400/1*3GBBhRn2pJMPbOG7-7UG2A.png",
+    "description": "test pencil",
+    "price": "4"
+  }
+]
